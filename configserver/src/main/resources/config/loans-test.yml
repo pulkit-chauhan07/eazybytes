@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+loans:
+  message: "Welcome to EazyBank Loans related Test/QA APIs"
+  contactDetails:
+    name: "Raghu - QA Lead"
+    email: "Raghu@eazybank.com"
+  onCallSupport:
+    - (555) 555-9969
+    - (555) 543-5564

@@ -1,0 +1,11 @@
+build:
+  version: "3.0"
+
+loans:
+  message: "Welcome to EazyBank Loans related local APIs"
+  contactDetails:
+    name: "Pulkit"
+    email: "pulkit@eazybank.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 543-2109

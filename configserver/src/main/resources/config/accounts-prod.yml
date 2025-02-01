@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts microservice related prod APIs"
+  contactDetails:
+    name: "Johnny - SLO"
+    email: "johnny@eazybank.com"
+  onCallSupport:
+    - (555) 555-9100
+    - (555) 543-1213

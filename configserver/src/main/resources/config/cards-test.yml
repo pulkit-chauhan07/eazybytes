@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+cards:
+  message: "Welcome to EazyBank Cards related Test/QA APIs"
+  contactDetails:
+    name: "Shahrukh - QA Lead"
+    email: "shahrukh@eazybank.com"
+  onCallSupport:
+    - (555) 555-1111
+    - (555) 543-1212

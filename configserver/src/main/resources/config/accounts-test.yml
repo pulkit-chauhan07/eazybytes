@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts microservice QA related APIs"
+  contactDetails:
+    name: "Bobby - QA Lead"
+    email: "bobby@eazybank.com"
+  onCallSupport:
+    - (555) 555-5678
+    - (555) 543-1011

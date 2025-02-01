@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+loans:
+  message: "Welcome to EazyBank Loans related Prod APIs"
+  contactDetails:
+    name: "Pulkit - SLO"
+    email: "Pulkit@eazybank.com"
+  onCallSupport:
+    - (555) 555-1401
+    - (555) 543-1111

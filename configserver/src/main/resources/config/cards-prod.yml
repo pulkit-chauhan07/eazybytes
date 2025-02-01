@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+cards:
+  message: "Welcome to EazyBank Cards related Prod APIs"
+  contactDetails:
+    name: "Bobby - SLO"
+    email: "Bobby@eazybank.com"
+  onCallSupport:
+    - (555) 555-5678
+    - (555) 543-1011
