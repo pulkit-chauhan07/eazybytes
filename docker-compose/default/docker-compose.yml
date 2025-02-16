@@ -11,8 +11,9 @@ services:
       interval: 10s
       retries: 10
       start_period: 5s
-    networks:
-      - eazybank
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
 
   configserver:
     image: "pulkit1307/configserver:s6"
@@ -28,30 +29,18 @@ services:
       timeout: 5s
     ports:
       - "8071:8071"
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - eazybank
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
 
   accounts:
     image: "pulkit1307/accounts:s6"
     container_name: accounts-ms
     ports:
       - "8080:8080"
-    depends_on:
-      configserver:
-        condition: service_healthy
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - eazybank
-    environment:
-      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071"
-      SPRING_PROFILES_ACTIVE: default
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
 
   loans:
     image: "pulkit1307/loans:s6"
@@ -61,15 +50,9 @@ services:
         condition: service_healthy
     ports:
       - "8090:8090"
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - eazybank
-    environment:
-      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071"
-      SPRING_PROFILES_ACTIVE: default
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
 
   cards:
     image: "pulkit1307/cards:s6"
@@ -79,15 +62,10 @@ services:
         condition: service_healthy
     ports:
       - "9000:9000"
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - eazybank
-    environment:
-      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071"
-      SPRING_PROFILES_ACTIVE: default
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+
   prometheus:
     image: prom/prometheus:v2.44.0
     container_name: prometheus
