@@ -38,6 +38,10 @@ public class CardsController {
     @Autowired
     private CardsContactInfoDto cardsContactInfoDto;
 
+    public CardsController(CardsService cardsService) {
+        this.cardsService = cardsService;
+    }
+
     @Operation(
             summary = "Create Card REST API",
             description = "REST API to create a new Eazy Bank card."
