@@ -44,6 +44,20 @@ services:
       file: common-config.yml
       service: microservice-base-config
 
+  eurekaserver:
+    image: "pulkit1307/eurekaserver:s7"
+    container_name: eurekaserver-ms
+    ports:
+      - "8070:8070"
+    environment:
+      SPRING_APPLICATION_NAME: eurekaserver
+    depends_on:
+      configserver:
+        condition: service_healthy
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+
   accounts:
     image: "pulkit1307/accounts:s7"
     container_name: accounts-ms
